@@ -1,0 +1,58 @@
+HELP SECTION !
+
+NOTE : arguments with prefix '<>' are mandatory e.g., <arguments>
+       arguments enclosed in '[]' are optional e.g., [argument]
+
+    -c <file_name> [permission]                         create the file with name (file_name) and permission (permission)
+                                                        (default=776).
+                                                        <file_name>:
+                                                        if exists in current directory then it overwrite with retaining previous permissions.
+
+                                                        Example : -c myfile.txt 656
+
+
+    -r <file_name> [amount_of_bytes] [offset]           read the file (file_name).
+
+                                                        <file_name>:
+                                                        should exists in current directory
+
+                                                        [amount_of_bytes] :
+                                                        should be a integer.
+                                                        It read the total character upto amount_of_bytes.
+                                                        If it reach end of file it print and exit.
+
+                                                        [offset] :
+                                                        should be a integer.
+                                                        takes the file_pointer to the the offset .
+                                                        if offset > no_character_in_file then it take it to the end_of_file;
+    
+    
+    -w <file_name> [offset]                             write in file (file_name) and start OVERWRITE at [offset position] (default=0).
+
+                                                        <file_name>:
+                                                        exists in current directory then it can write.
+                                                        not exists in current directory then it'll create one
+                                                 
+
+                                                        [skip val] :
+                                                        should be a integer.
+                                                        takes the file_pointer to the the offset .
+                                                        if offset > no_character_in_file then it take it to the end_of_file;
+
+
+    -s <file_name>                                      show the information about file (file_name).
+                                                        <file_name>:
+                                                        should exists in current directory
+
+
+    -a <file_name>                                      append the content in file (file_name).
+
+
+    -cp <file_name1> <file_name2>                       It copy the content of file_name1 to file_name2
+
+                                                        <file_name1>
+                                                        file should exists
+
+                                                        <file_name2>
+                                                        if file exists then it truncate the data of file_name2 then copy
+                                                        if file not exists then it will create one and then copy
